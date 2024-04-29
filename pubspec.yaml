@@ -1,0 +1,42 @@
+name: foody
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.2.6 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  cupertino_icons: ^1.0.2
+  get: ^4.6.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.2
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/assets/images/Main.jpg
+    - assets/assets/images/Logo.png
+    - assets/assets/images/google_icon.png
+    - assets/assets/images/facebook_icon.png
+    - assets/assets/images/mac_logo.png
+    - assets/assets/images/profile.png
+    - assets/assets/images/recet1.jpg
+  fonts:
+    - family: KumbhSans  # Nombre de la familia de la fuente
+      fonts:
+        - asset: assets/assets/fonts/KumbhSans.ttf  # Ruta de la fuente regular
+        - asset: assets/assets/fonts/KumbhSans-Bold.ttf  # Ruta de la fuente bold (si es necesario)
+        - asset: assets/assets/fonts/KumbhSans.ttf  # Ruta de la fuente regular
+        - asset: assets/assets/fonts/KumbhSans-SemiBold.ttf  # Ruta de la fuente bold (si es necesario)
+        - asset: assets/assets/fonts/KumbhSans.ttf  # Ruta de la fuente regular
+        - asset: assets/assets/fonts/KumbhSans-Medium.ttf  # Ruta de la fuente bold (si es necesario)
+        - asset: assets/assets/fonts/KumbhSans.ttf  # Ruta de la fuente regular
+        - asset: assets/assets/fonts/KumbhSans-Thin.ttf  # Ruta de la fuente bold (si es necesario)
+          
