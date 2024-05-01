@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:foody/domain/models/recipe.dart';
+import 'package:foody/domain/models/recent.dart';
 
 class RecentPage extends StatelessWidget {
-  final Recipe recent;
+  final Recent recent;
 
   const RecentPage({super.key, required this.recent});
 

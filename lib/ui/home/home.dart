@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:foody/ui/pages/category/carrusel/carruselCategory.dart';
+import 'package:foody/ui/pages/user/inventory.dart';
 import 'package:foody/ui/pages/user/profile.dart';
-import 'package:foody/ui/pages/user/recent/carrusel/carruselRecipe.dart';
+import 'package:foody/ui/pages/user/recent/carrusel/carruselRecent.dart';
 import 'package:get/get.dart';
 
 class HomePage extends StatefulWidget {
@@ -81,7 +82,7 @@ class _HomePageState extends State<HomePage> {
           ? RecipesPage() // Página de recetas
           : _currentIndex == 1
               ? HomePageContent() // Página de inicio (vacía)
-              : InventoryPage(), // Página de inventario (vacía)
+              : InventoryScreen(),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: (index) {
@@ -166,22 +167,12 @@ class HomePageContent extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(5.0),
-              child: RecipeCarousel(),
+              padding: const EdgeInsets.all(1.0),
+              child: RecentCarousel(),
             )
           ],
         ),
       ),
-    );
-  }
-}
-
-class InventoryPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // Implementación de la página de inventario (vacía)
-    return const Center(
-      child: Text('Página de Inventario'),
     );
   }
 }
