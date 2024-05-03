@@ -22,12 +22,12 @@ class RecentCarousel extends StatelessWidget {
           thickness: 10.0,
           radius: const Radius.circular(10.0),
           child: ListView.builder(
-            itemCount: _recentController.listRecipes.length,
+            itemCount: _recentController.listRecent.length,
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
               // Ensure listRecipes is a List<Recent>
-              if (_recentController.listRecipes is List<Recent>) {
-                final Recent recent = _recentController.listRecipes[index];
+              if (_recentController.listRecent is List<Recent>) {
+                final Recent recent = _recentController.listRecent[index];
                 return RecentButton(
                   recent: recent,
                   recentController: _recentController,
@@ -120,10 +120,10 @@ class _RecentButtonState extends State<RecentButton> {
                           setState(() {
                             _isFavorite = !_isFavorite;
                             if (_isFavorite) {
-                              widget.recentController.listRecipes
+                              widget.recentController.listRecent
                                   .add(widget.recent);
                             } else {
-                              widget.recentController.listRecipes
+                              widget.recentController.listRecent
                                   .remove(widget.recent);
                             }
                           });

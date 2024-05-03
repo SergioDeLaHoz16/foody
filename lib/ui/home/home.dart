@@ -79,7 +79,7 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: _currentIndex == 0
-          ? RecipesPage() // Página de recetas
+          ? RecentPage() // Página de recetas
           : _currentIndex == 1
               ? HomePageContent() // Página de inicio (vacía)
               : InventoryScreen(),
@@ -110,7 +110,7 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class RecipesPage extends StatelessWidget {
+class RecentPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Implementación de la página de recetas
@@ -149,7 +149,9 @@ class HomePageContent extends StatelessWidget {
                         color: Color.fromRGBO(0, 0, 0, 1),
                       ),
                     ),
+                    
                   ),
+                  
                   CategoryCarousel(),
                   const Padding(
                     padding: EdgeInsets.only(left: 10.0),

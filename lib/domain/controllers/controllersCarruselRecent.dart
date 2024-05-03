@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:foody/domain/models/recent.dart';
 
 class RecentController {
-  final List<Recent> listRecipes = [
+  final List<Recent> listRecent = [
     Recent(
         image: Image.asset('assets/assets/images/recet1.jpg'),
         tittle: 'Sandwichito Sabrosito',
