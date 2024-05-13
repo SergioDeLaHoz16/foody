@@ -93,7 +93,7 @@ class _InventoryItemCardState extends State<InventoryItemCard> {
     return Card(
       elevation: 2.0,
       child: Padding(
-        padding: const EdgeInsets.all(13.0),
+        padding: const EdgeInsets.all(15.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -102,10 +102,10 @@ class _InventoryItemCardState extends State<InventoryItemCard> {
                 // Agregar una imagen para el vegetal
                 Image.network(
                   widget.item.imageUrl,
-                  width: 120.0,
-                  height: 120.0,
+                  width: 150.0,
+                  height: 150.0,
                 ),
-                const SizedBox(width: 16.0),
+                const SizedBox(width: 10.0),
                 Expanded(
                   // Wrap the description column in Expanded
                   child: Column(
@@ -122,8 +122,8 @@ class _InventoryItemCardState extends State<InventoryItemCard> {
                         width: double.infinity, // Take maximum available width
                         child: Text(
                           //widget.item.description,
-                          'HJASJDKAJKSDHJAKSDHJKASDKJASjalksdklajsldkajlksdjaklsjKLSJADLKASJDAKLD',
-                          style: TextStyle(fontSize: 15.0),
+                          'Loren ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec.',
+                          style: TextStyle(fontSize: 12.0),
                         ),
                       ),
                       const SizedBox(height: 8.0),

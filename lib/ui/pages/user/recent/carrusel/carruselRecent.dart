@@ -16,12 +16,19 @@ class RecentCarousel extends StatelessWidget {
         ),
       ),
       child: SizedBox(
-        height: 230.0,
+        height: 210.0,
         child: Scrollbar(
           // Muestra la barra de desplazamiento siempre
-          thickness: 10.0,
-          radius: const Radius.circular(10.0),
-          child: ListView.builder(
+          thickness: 15.0,
+          radius: const Radius.circular(5.0),
+          child: GridView.builder(
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 1,
+              childAspectRatio: 4/3,
+              //crossAxisSpacing: 10.0,
+
+
+            ),
             itemCount: _recentController.listRecent.length,
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
@@ -36,7 +43,7 @@ class RecentCarousel extends StatelessWidget {
                 // Handle the case if listRecipes is not List<Recent>
                 return const SizedBox(); // Or handle differently
               }
-            },
+            }, 
           ),
         ),
       ),
@@ -66,7 +73,7 @@ class _RecentButtonState extends State<RecentButton> {
     return SingleChildScrollView(
       child: SizedBox(
         height: 205,
-        width: 190,
+        width: double.infinity,
         child: Card(
           elevation: 5.0,
           shape: RoundedRectangleBorder(
@@ -76,38 +83,46 @@ class _RecentButtonState extends State<RecentButton> {
             children: [
               Column(
                 // Remove Flexible widgets and set mainAxisSize to min
+                
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Padding(
+                    Padding(
                     padding: const EdgeInsets.symmetric(
-                      vertical: 10,
+                      vertical: 5,
                       horizontal: 5,
                     ),
                     child: AspectRatio(
                       aspectRatio: 500 / 300,
                       child: Container(
-                        padding: const EdgeInsets.all(8.0),
-                        child: FittedBox(
-                          fit: BoxFit.fill,
-                          child: widget.recent.image,
-                        ),
+                      padding: const EdgeInsets.all(5.0),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      child: FittedBox(
+                        fit: BoxFit.fill,
+                        child: widget.recent.image,
+                      ),
                       ),
                     ),
-                  ),
+                    ),
                   Expanded(
                     // Wrap the title in an Expanded widget
-                    child: Text(
-                      widget.recent.tittle,
-                      textAlign: TextAlign.left,
-                      style: const TextStyle(
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.bold,
-                        overflow: TextOverflow.ellipsis, // Allow text to wrap
+                    child: SizedBox(
+                        width: double.infinity, // Take maximum available width
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 10.0, right: 10.0),
+                          child: Text(
+                            widget.recent.description,
+                            style: const TextStyle(fontSize: 16.0,
+                          
+                          fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.left,
+                          ),
+                        ),
                       ),
-                      maxLines:
-                          null, // Remove maxLines to allow multi-line text
-                    ),
                   ),
+                 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
