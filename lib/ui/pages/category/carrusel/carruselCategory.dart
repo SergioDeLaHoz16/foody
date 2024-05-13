@@ -29,7 +29,7 @@ class CategoryCarousel extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
               return Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(4.0),
                 child: CategoryButton(
                   category: _categoryController.categories[index],
                 ),

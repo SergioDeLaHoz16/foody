@@ -3,14 +3,32 @@ import '../models/category.dart';
 
 class CategoryController {
   final List<Category> categories = [
-    Category(name: 'Frutas', icon: Icons.local_florist),
-    Category(name: 'Vegetales', icon: Icons.grass),
-    Category(name: 'Harinas', icon: Icons.local_pizza),
-    Category(name: 'Pescados', icon: Icons.local_see),
-    Category(name: 'Carnes', icon: Icons.local_dining),
-    Category(name: 'Lácteos', icon: Icons.local_drink),
-    Category(name: 'Cereales', icon: Icons.grain),
-    Category(name: 'Legumbres', icon: Icons.eco),
-    Category(name: 'Bebidas', icon: Icons.local_cafe),
+    Category(
+        name: 'Frutas',
+        image: Image.asset('assets/assets/images/imageFruit.png')),
+    Category(
+        name: 'Vegetales',
+        image: Image.asset('assets/assets/images/imageVegetables.png')),
+    Category(
+        name: 'Harinas',
+        image: Image.asset('assets/assets/images/imageHarinas.png')),
+    Category(
+        name: 'Pescados',
+        image: Image.asset('assets/assets/images/imagePescados.png')),
+    Category(
+        name: 'Carnes',
+        image: Image.asset('assets/assets/images/imageCarnes.png')),
+    Category(
+        name: 'Lácteos',
+        image: Image.asset('assets/assets/images/imageLacteos.png')),
+    Category(
+        name: 'Cereales',
+        image: Image.asset('assets/assets/images/imageCereales.png')),
+    Category(
+        name: 'Legumbres',
+        image: Image.asset('assets/assets/images/imageLegumbres.png')),
+    Category(
+        name: 'Bebidas',
+        image: Image.asset('assets/assets/images/imageBebidas.png')),
   ];
 }

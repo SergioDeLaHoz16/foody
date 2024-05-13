@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class Category {
   final String name;
-  final IconData icon;
+  final Image image;
 
-  Category({required this.name, required this.icon});
+  Category({required this.name, required this.image});
 }

@@ -4,39 +4,55 @@ import 'package:foody/domain/models/recent.dart';
 class RecentController {
   final List<Recent> listRecent = [
     Recent(
-        image: Image.asset('assets/assets/images/recet1.jpg'),
-        tittle: 'Sandwichito Sabrosito',
-        description: 'Sandwichito Sabrosito'),
+      image: Image.asset('assets/assets/images/recet1.jpg'),
+      title: 'Sandwichito Sabrosito',
+      description: 'Sandwichito Sabrosito',
+      ingredients: ['Pan', 'Jamón', 'Queso', 'Tomate', 'Lechuga'],
+    ),
     Recent(
-        image: Image.asset('assets/assets/images/recet1.jpg'),
-        tittle: 'Bueñuelito Sabrosito',
-        description: 'Bueñuelito Sabrosito'),
+      image: Image.asset('assets/assets/images/recet1.jpg'),
+      title: 'Bueñuelito Sabrosito',
+      description: 'Bueñuelito Sabrosito',
+      ingredients: ['Harina', 'Huevo', 'Sal', 'Azúcar', 'Levadura'],
+    ),
     Recent(
-        image: Image.asset('assets/assets/images/recet1.jpg'),
-        tittle: 'Pastas Italiana',
-        description: 'Pastas Estilo Italiano'),
+      image: Image.asset('assets/assets/images/recet1.jpg'),
+      title: 'Pastas Italiana',
+      description: 'Pastas Estilo Italiano',
+      ingredients: ['Pasta', 'Salsa de tomate', 'Queso parmesano', 'Albahaca'],
+    ),
     Recent(
-        image: Image.asset('assets/assets/images/recet1.jpg'),
-        tittle: 'Pescados de Aji',
-        description: 'Pescados de Aji'),
+      image: Image.asset('assets/assets/images/recet1.jpg'),
+      title: 'Pescados de Aji',
+      description: 'Pescados de Aji',
+      ingredients: ['Filete de pescado', 'Aji amarillo', 'Limón', 'Ajo', 'Sal'],
+    ),
   ];
 
   final List<Recent> myRecipes = [
     Recent(
-        image: Image.asset('assets/assets/images/recet1.jpg'),
-        tittle: 'ss Sabrosito Papdasdaso paos',
-        description: 'Sandwichitoddada Sabrosito'),
+      image: Image.asset('assets/assets/images/recet1.jpg'),
+      title: 'Sandwichito Sabrosito',
+      description: 'Sandwichito Sabrosito',
+      ingredients: ['Pan', 'Jamón', 'Queso', 'Tomate', 'Lechuga'],
+    ),
     Recent(
-        image: Image.asset('assets/assets/images/recet1.jpg'),
-        tittle: 'Pollo Sabrosito',
-        description: 'Pollo Sabrosito'),
+      image: Image.asset('assets/assets/images/recet1.jpg'),
+      title: 'Bueñuelito Sabrosito',
+      description: 'Bueñuelito Sabrosito',
+      ingredients: ['Harina', 'Huevo', 'Sal', 'Azúcar', 'Levadura'],
+    ),
     Recent(
-        image: Image.asset('assets/assets/images/recet1.jpg'),
-        tittle: 'Pastas Alemanas',
-        description: 'Pastas Estilo Italiano'),
+      image: Image.asset('assets/assets/images/recet1.jpg'),
+      title: 'Pastas Italiana',
+      description: 'Pastas Estilo Italiano',
+      ingredients: ['Pasta', 'Salsa de tomate', 'Queso parmesano', 'Albahaca'],
+    ),
     Recent(
-        image: Image.asset('assets/assets/images/recet1.jpg'),
-        tittle: 'Pescados de Aji',
-        description: 'Pescados de Aji'),
+      image: Image.asset('assets/assets/images/recet1.jpg'),
+      title: 'Pescados de Aji',
+      description: 'Pescados de Aji',
+      ingredients: ['Filete de pescado', 'Aji amarillo', 'Limón', 'Ajo', 'Sal'],
+    ),
   ];
 }

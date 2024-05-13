@@ -2,12 +2,16 @@ import 'package:flutter/material.dart';
 
 class Recent {
   final Image image;
-  final String tittle;
+  final String title;
   final String description;
+  final List<String> ingredients;
 
-  Recent(
-      {required this.image, required this.tittle, required this.description});
-
+  Recent({
+    required this.image,
+    required this.title,
+    required this.description,
+    required this.ingredients, // Añadimos ingredientes como parámetro requerido
+  });
   void agregarReceta(List<Recent> listRecent) {
     // Implementar lógica para agregar la receta a una lista (lista local o base de datos)
     // Ejemplo usando una lista local

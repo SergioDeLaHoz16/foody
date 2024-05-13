@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:foody/domain/controllers/controllersCarruselRecent.dart';
 import 'package:foody/ui/pages/category/carrusel/carruselCategory.dart';
 import 'package:foody/ui/pages/user/inventory.dart';
 import 'package:foody/ui/pages/user/profile.dart';
 import 'package:foody/ui/pages/user/recent/carrusel/carruselRecent.dart';
 import 'package:get/get.dart';
+
+import '../pages/user/recent/carrusel/recent.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -79,7 +82,8 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: _currentIndex == 0
-          ? RecentPage() // Página de recetas
+          ? RecentPage(
+              recent: RecentController().listRecent[0]) // Página de recetas
           : _currentIndex == 1
               ? HomePageContent() // Página de inicio (vacía)
               : InventoryScreen(),
@@ -106,16 +110,6 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
       ),
-    );
-  }
-}
-
-class RecentPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    // Implementación de la página de recetas
-    return const Center(
-      child: Text('Página de Recetas'),
     );
   }
 }
@@ -149,9 +143,7 @@ class HomePageContent extends StatelessWidget {
                         color: Color.fromRGBO(0, 0, 0, 1),
                       ),
                     ),
-                    
                   ),
-                  
                   CategoryCarousel(),
                   const Padding(
                     padding: EdgeInsets.only(left: 10.0),

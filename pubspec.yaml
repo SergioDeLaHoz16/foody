@@ -28,6 +28,15 @@ flutter:
     - assets/assets/images/mac_logo.png
     - assets/assets/images/profile.png
     - assets/assets/images/recet1.jpg
+    - assets/assets/images/imageFruit.png
+    - assets/assets/images/imageHarinas.png
+    - assets/assets/images/imageVegetables.png
+    - assets/assets/images/imagePescados.png
+    - assets/assets/images/imageCarnes.png
+    - assets/assets/images/imageLacteos.png
+    - assets/assets/images/imageCereales.png
+    - assets/assets/images/imageLegumbres.png
+    - assets/assets/images/imageBebidas.png
   fonts:
     - family: KumbhSans  # Nombre de la familia de la fuente
       fonts:
