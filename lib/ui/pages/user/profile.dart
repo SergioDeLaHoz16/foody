@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foody/ui/pages/recipe/listRecent.dart';
 import 'package:foody/ui/pages/user/profile_page.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -96,7 +97,14 @@ class _ProfilePageState extends State<ProfilePage> {
             const SizedBox(height: 10), // Espacio entre los botones
 
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => MyRecipesPage(),
+                  ),
+                );
+              },
               style: ElevatedButton.styleFrom(
                   foregroundColor: const Color.fromARGB(84, 0, 0, 0),
                   padding:
@@ -113,22 +121,22 @@ class _ProfilePageState extends State<ProfilePage> {
             ),
             const SizedBox(height: 10), // Espacio entre los botones
 
-            ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                  foregroundColor: const Color.fromARGB(84, 0, 0, 0),
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 15, horizontal: 92),
-                  textStyle: const TextStyle(
-                      fontSize: 16,
-                      fontFamily: 'KumbhSans',
-                      fontWeight: FontWeight.w700 // Tamaño de fuente del texto
-                      ),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8)),
-                  backgroundColor: const Color.fromARGB(255, 244, 255, 246)),
-              child: const Text('Configuraciones'),
-            ),
+            // ElevatedButton(
+            //   onPressed: () {},
+            //   style: ElevatedButton.styleFrom(
+            //       foregroundColor: const Color.fromARGB(84, 0, 0, 0),
+            //       padding:
+            //           const EdgeInsets.symmetric(vertical: 15, horizontal: 92),
+            //       textStyle: const TextStyle(
+            //           fontSize: 16,
+            //           fontFamily: 'KumbhSans',
+            //           fontWeight: FontWeight.w700 // Tamaño de fuente del texto
+            //           ),
+            //       shape: RoundedRectangleBorder(
+            //           borderRadius: BorderRadius.circular(8)),
+            //       backgroundColor: const Color.fromARGB(255, 244, 255, 246)),
+            //   child: const Text('Configuraciones'),
+            // ),
             const SizedBox(height: 10), // Espacio entre los botones
 
             ElevatedButton(

@@ -28,7 +28,6 @@ class _MyProfilePageState extends State<MyProfilePage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             AppBar(
-              backgroundColor: const Color.fromARGB(108, 141, 141, 141),
               elevation: 0,
               toolbarHeight: 10,
             ),
@@ -42,6 +41,7 @@ class _MyProfilePageState extends State<MyProfilePage> {
                   color: Color.fromRGBO(7, 154, 21, 1),
                 ),
               ),
+              
             ),
             InkWell(
               onTap: () {

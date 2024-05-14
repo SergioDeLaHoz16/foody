@@ -33,7 +33,6 @@ class MyRecipesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
         title: const Text('Mis Recetas',
             style: TextStyle(fontWeight: FontWeight.bold)),
       ),
