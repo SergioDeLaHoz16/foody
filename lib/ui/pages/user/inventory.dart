@@ -1,40 +1,40 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:foody/domain/models/item.dart';
+import 'package:foody/ui/pages/product/product.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class InventoryScreen extends StatefulWidget {
+  final List<Item> inventory; // Define el parámetro inventory
+
+  const InventoryScreen({Key? key, required this.inventory}) : super(key: key);
+
   @override
   _InventoryScreenState createState() => _InventoryScreenState();
 }
 
 class _InventoryScreenState extends State<InventoryScreen> {
-  final _inventory = [
-    Item('Brocoli', 1, 3, Image.asset('assets/assets/images/imageFruit.png')),
-    Item('Tomate', 1, 3, Image.asset('assets/assets/images/imageFruit.png')),
-    Item('Brocoli', 2, 3, Image.asset('assets/assets/images/imageFruit.png')),
-    Item('Brocoli', 3, 3, Image.asset('assets/assets/images/imageFruit.png')),
-  ];
+  late List<Item> _inventory;
+
+  @override
+  void initState() {
+    super.initState();
+    _inventory = List.from(widget
+        .inventory); // Inicializa _inventory con una copia modificable de widget.inventory
+  }
+
+  Future<void> _saveInventory() async {
+    final prefs = await SharedPreferences.getInstance();
+    final jsonStringList =
+        _inventory.map((item) => jsonEncode(item.toJson())).toList();
+    await prefs.setStringList('inventory', jsonStringList);
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: const Row(
-          children: [
-            SizedBox(width: 8), // Espacio entre el icono y el texto
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Inventario',
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
+        title: const Text('Inventario'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -45,7 +45,7 @@ class _InventoryScreenState extends State<InventoryScreen> {
                 itemCount: _inventory.length,
                 itemBuilder: (context, index) {
                   final item = _inventory[index];
-                  return InventoryItemCard(item: item);
+                  return _buildInventoryItemCard(item);
                 },
               ),
             ),
@@ -53,42 +53,27 @@ class _InventoryScreenState extends State<InventoryScreen> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Implement functionality to add a new item
-          // ...
+        onPressed: () async {
+          final newItem = await Navigator.push<Item>(
+            context,
+            MaterialPageRoute(builder: (context) => RegistroProductoPage()),
+          );
+          if (newItem != null) {
+            setState(() {
+              _inventory.add(newItem);
+            });
+            await _saveInventory(); // Guardar la lista actualizada
+          }
         },
         child: const Icon(Icons.add),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
-}
 
-class Item {
-  final String name;
-  int quantity;
-  final int total;
-  final Image imageUrl;
-
-  Item(this.name, this.quantity, this.total, this.imageUrl);
-}
-
-class InventoryItemCard extends StatefulWidget {
-  final Item item;
-
-  InventoryItemCard({Key? key, required this.item}) : super(key: key);
-
-  @override
-  _InventoryItemCardState createState() => _InventoryItemCardState();
-}
-
-class _InventoryItemCardState extends State<InventoryItemCard> {
-  @override
-  Widget build(BuildContext context) {
+  Widget _buildInventoryItemCard(Item item) {
     return Container(
-      height: 185, // Altura deseada de la tarjeta
-      width: double
-          .infinity, // Ancho deseado de la tarjeta (toma todo el ancho disponible)
+      height: 185,
+      width: double.infinity,
       child: Card(
         elevation: 2.0,
         child: Padding(
@@ -98,26 +83,22 @@ class _InventoryItemCardState extends State<InventoryItemCard> {
             children: [
               Row(
                 children: [
-                  // Mostrar la imagen usando Image.asset en lugar de Image.network
-                  widget.item.imageUrl,
                   const SizedBox(width: 10.0),
                   Expanded(
-                    // Wrap the description column in Expanded
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          widget.item.name,
+                          item.nombre,
                           style: const TextStyle(
-                              fontSize: 20.0, fontWeight: FontWeight.bold),
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                         const SizedBox(height: 8.0),
-                        // Description within SizedBox with limited width
                         const SizedBox(
-                          width:
-                              double.infinity, // Take maximum available width
+                          width: double.infinity,
                           child: Text(
-                            //widget.item.description,
                             'Loren ipsum dolor sit amet, consectetur adipiscing elit. Nullam nec purus nec.',
                             style: TextStyle(fontSize: 12.0),
                           ),
@@ -127,16 +108,13 @@ class _InventoryItemCardState extends State<InventoryItemCard> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'Cantidad: ${widget.item.quantity}/${widget.item.total}',
+                              'Cantidad: ${item.cantidad}/99',
                               style: const TextStyle(fontSize: 15.0),
                             ),
                             IconButton(
                               icon: const Icon(Icons.add),
                               onPressed: () {
-                                // Incrementar la cantidad
-                                setState(() {
-                                  widget.item.quantity++;
-                                });
+                                setState(() {});
                               },
                             ),
                           ],

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foody/ui/pages/user/profile_page.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -53,9 +54,16 @@ class _ProfilePageState extends State<ProfilePage> {
           children: [
             const SizedBox(height: 20),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const MyProfilePage(),
+                  ),
+                );
+              },
               style: ElevatedButton.styleFrom(
-                  foregroundColor: Color.fromARGB(84, 0, 0, 0),
+                  foregroundColor: const Color.fromARGB(84, 0, 0, 0),
                   padding:
                       const EdgeInsets.symmetric(vertical: 15, horizontal: 125),
                   textStyle: const TextStyle(
@@ -74,7 +82,7 @@ class _ProfilePageState extends State<ProfilePage> {
               style: ElevatedButton.styleFrom(
                   foregroundColor: const Color.fromARGB(84, 0, 0, 0),
                   padding:
-                      const EdgeInsets.symmetric(vertical: 15, horizontal: 125),
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 106),
                   textStyle: const TextStyle(
                       fontSize: 16,
                       fontFamily: 'KumbhSans',
@@ -92,7 +100,7 @@ class _ProfilePageState extends State<ProfilePage> {
               style: ElevatedButton.styleFrom(
                   foregroundColor: const Color.fromARGB(84, 0, 0, 0),
                   padding:
-                      const EdgeInsets.symmetric(vertical: 15, horizontal: 125),
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 110),
                   textStyle: const TextStyle(
                       fontSize: 16,
                       fontFamily: 'KumbhSans',
@@ -110,7 +118,7 @@ class _ProfilePageState extends State<ProfilePage> {
               style: ElevatedButton.styleFrom(
                   foregroundColor: const Color.fromARGB(84, 0, 0, 0),
                   padding:
-                      const EdgeInsets.symmetric(vertical: 15, horizontal: 125),
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 92),
                   textStyle: const TextStyle(
                       fontSize: 16,
                       fontFamily: 'KumbhSans',
@@ -126,9 +134,9 @@ class _ProfilePageState extends State<ProfilePage> {
             ElevatedButton(
               onPressed: () {},
               style: ElevatedButton.styleFrom(
-                  foregroundColor: const Color.fromARGB(85, 61, 59, 59),
+                  foregroundColor: const Color.fromARGB(224, 255, 255, 255),
                   padding:
-                      const EdgeInsets.symmetric(vertical: 15, horizontal: 125),
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 105),
                   textStyle: const TextStyle(
                       fontSize: 16,
                       fontFamily: 'KumbhSans',

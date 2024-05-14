@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foody/domain/controllers/controllersCarruselRecent.dart';
 import 'package:foody/domain/models/recent.dart';
-import 'package:foody/ui/pages/user/recent/carrusel/recent.dart';
+import 'package:foody/ui/pages/carrusel/recent.dart';
 
 class RecentCarousel extends StatelessWidget {
   final RecentController _recentController = RecentController();

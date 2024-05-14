@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:foody/domain/controllers/controllersCarruselRecent.dart';
 import 'package:foody/ui/pages/category/carrusel/carruselCategory.dart';
 import 'package:foody/ui/pages/user/inventory.dart';
 import 'package:foody/ui/pages/user/profile.dart';
-import 'package:foody/ui/pages/user/recent/carrusel/carruselRecent.dart';
+import 'package:foody/ui/pages/carrusel/carruselRecent.dart';
 import 'package:get/get.dart';
 
-import '../pages/user/recent/carrusel/recent.dart';
+import '../pages/recipe/listRecent.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -82,11 +81,11 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: _currentIndex == 0
-          ? RecentPage(
-              recent: RecentController().listRecent[0]) // Página de recetas
+          ? MyRecipesPage() // Página de recetas
           : _currentIndex == 1
               ? HomePageContent() // Página de inicio (vacía)
-              : InventoryScreen(),
+              : const InventoryScreen(
+                  inventory: []), // Use InventoryScreen with empty inventory list
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         onTap: (index) {
